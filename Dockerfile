@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-RUN mkdir files
+RUN sudo mkdir files
 COPY . /files
 WORKDIR /files
 ENTRYPOINT ["/files"]

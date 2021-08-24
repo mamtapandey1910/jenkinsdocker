@@ -11,13 +11,22 @@ pipeline {
       }
      stage ('build'){
         steps {
-            sh 'docker build -t java-app . '
+            sh 'docker build -t python-app:latest . '
         }
       }
      stage ('run'){
         steps {
-            sh 'docker run java-app'
+            sh 'docker run python-app:latest'
         }
       }
+      stage('Run inside Docker container') {
+       agent {
+        docker { image 'pythonapp' }
+         }
+     steps {
+    sh 'mkdir mynewdir'
+    sh 'cd mynewdir'
+  }
+}
     }
   }

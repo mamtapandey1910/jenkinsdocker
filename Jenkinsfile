@@ -11,12 +11,12 @@ pipeline {
       }
      stage ('build'){
         steps {
-            sh 'docker build -t jenkinsdoc:latest .'
+            sh 'docker build -t java-app . '
         }
       }
      stage ('run'){
         steps {
-            sh 'docker run jenkinsdoc:latest'
+            sh 'docker run java-app'
         }
       }
     }

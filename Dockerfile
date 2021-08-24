@@ -1,5 +1,5 @@
-FROM python:3
-WORKDIR /usr/src/app
-COPY . .
-CMD ["test.py"]
-ENTRYPOINT ["python3"]
+FROM ubuntu:latest
+RUN mkdir files
+COPY . /files
+WORKDIR /files
+ENTRYPOINT ["/files"]

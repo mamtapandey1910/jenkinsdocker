@@ -1,4 +1,5 @@
-FROM python:3.8
-RUN mkdir myapp
-WORKDIR /myapp
-RUN echo "Hello you"> test.txt
+FROM java:8  
+COPY . /var/www/java  
+WORKDIR /var/www/java  
+RUN javac Hello.java  
+CMD ["java", "Hello"] 

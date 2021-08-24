@@ -1,5 +1,5 @@
-FROM java:8  
-COPY . /var/www/java  
-WORKDIR /var/www/java  
-RUN javac Hello.java  
-CMD ["java", "Hello"] 
+FROM python:3
+WORKDIR /usr/src/app
+COPY . .
+CMD ["test.py"]
+ENTRYPOINT ["python3"]

@@ -16,7 +16,7 @@ pipeline {
       }
      stage ('run'){
         steps {
-            sh 'docker run jenkinsdoclatest'
+            sh 'docker run jenkinsdoc:latest'
         }
       }
     }
